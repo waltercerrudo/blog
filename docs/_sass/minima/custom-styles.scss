@@ -1,2 +1,54 @@
 // Placeholder to allow defining custom styles that override everything else.
 // (Use `_sass/minima/custom-variables.scss` to override variable defaults)
+
+.main-layout {
+  display: flex;
+  gap: $spacing-unit * 0.5;
+}
+
+.content-area {
+  flex: 1 1 auto;
+}
+
+.categories-sidebar {
+  width: 220px;
+  margin-left: auto;
+  border-left: 1px solid $border-color-01;
+  padding-left: $spacing-unit * 0.5;
+}
+
+.categories-list {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.categories-list li + li {
+  margin-top: $spacing-unit * 0.3;
+}
+
+.categories-list a {
+  display: block;
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: $link-base-color;
+  text-decoration: none;
+}
+
+.categories-list a:hover {
+  background-color: $border-color-01;
+  text-decoration: none;
+}
+
+@include media-query($on-medium) {
+  .main-layout {
+    flex-direction: column;
+  }
+  .categories-sidebar {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid $border-color-01;
+    margin-top: $spacing-unit;
+    padding-top: $spacing-unit * 0.5;
+  }
+}

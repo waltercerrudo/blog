@@ -8,15 +8,19 @@
     {%- include header.html -%}
 
     <main class="page-content" aria-label="Content">
-      <ul>
-        {% assign categories_list = site.posts | map: 'categories' | uniq | flatten | sort %}
-        {% for category in categories_list %}
-          <li><a href="/blog/categories/{{ category | downcase | slugify }}/">{{ category }}</a></li>
-        {% endfor %}
-          <li><a href="/blog/categories/other/">Otros</a></li>
-      </ul>
-      <div class="wrapper">
-        {{ content }}
+      <div class="wrapper main-layout">
+        <div class="content-area">
+          {{ content }}
+        </div>
+        <aside class="categories-sidebar">
+          <ul class="categories-list">
+            {% assign categories_list = site.posts | map: 'categories' | uniq | flatten | sort %}
+            {% for category in categories_list %}
+              <li><a href="/blog/categories/{{ category | downcase | slugify }}/">{{ category }}</a></li>
+            {% endfor %}
+            <li><a href="/blog/categories/other/">Otros</a></li>
+          </ul>
+        </aside>
       </div>
     </main>
 
