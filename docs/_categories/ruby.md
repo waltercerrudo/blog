@@ -1,14 +1,14 @@
 ---
 layout: default
 title: Artículos en Jekyll
-permalink: /categories/jekyll/
-categories: jekyll
+permalink: /categories/ruby/
+categories: ruby
 ---
-<h1>Artículos en Jekyll</h1>
+<h1>Artículos en Ruby</h1>
 <ul>
 {% for post in site.posts %}
   {% if post.categories contains 'jekyll' %}
-    <li><a href="/blog{{ post.url }}">{{ post.title }}</a></li>
+    <li><a href="/blog/{{ post }}">{{ post.title }}</a></li>
   {% endif %}
 {% endfor %}
 </ul>

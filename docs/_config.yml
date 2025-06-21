@@ -32,6 +32,11 @@ github_username:  waltercerrudo
 # Build settings
 theme: minima
 
+collections:
+  categories:
+    output: true
+    permalink: /blog/categories/:name/
+
 minima:
   show_excerpts: true
 
