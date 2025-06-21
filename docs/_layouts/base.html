@@ -9,9 +9,6 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper main-layout">
-        <div class="content-area">
-          {{ content }}
-        </div>
         <aside class="categories-sidebar">
           <ul class="categories-list">
             {% assign categories_list = site.posts | map: 'categories' | uniq | flatten | sort %}
@@ -21,6 +18,9 @@
             <li><a href="/blog/categories/other/">Otros</a></li>
           </ul>
         </aside>
+        <div class="content-area">
+          {{ content }}
+        </div>        
       </div>
     </main>
 

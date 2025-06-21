@@ -1,29 +1,71 @@
 ---
-layout: post
-title:  "Welcome to Jekyll!"
-date:   2025-06-21 17:23:54 -0300
+title: Trabajando con jekyll
+description: Guía para trabajar con jekyll y publicar artículos.
+author: wcerrudo
+date: 2025-06-21 11:33:00 +0800
 categories: [jekyll, publicar, ruby]
+tags: [typography]
+pin: true
+math: true
+mermaid: true
+image:
+  path: /commons/devices-mockup.png
+  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
+  alt: Responsive rendering of Chirpy theme on multiple devices.
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-Jekyll requires blog post files to be named according to the following format:
+## Creando documentación con Jekyll
 
-`YEAR-MONTH-DAY-title.MARKUP`
+**Jekyll** es un generador de sitios estáticos escrito en Ruby. Se usa para crear blogs y páginas web que se pueden publicar fácilmente en servicios como GitHub Pages, convirtiendo archivos Markdown en sitios web rápidos y seguros.
 
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+A diferencia de los sistemas de gestión de contenidos como WordPress, Jekyll no necesita una base de datos: simplemente toma tus archivos .md (Markdown), .html y plantillas Liquid, y los compila en un conjunto de archivos HTML listos para desplegar.
 
-Jekyll also offers powerful support for code snippets:
+### Porque Jekyll?
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+✅ Simplicidad y control total: Al trabajar con archivos planos, puedes versionar tu sitio como cualquier otro proyecto de software.
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+🚀 Velocidad y rendimiento: Al ser un sitio estático, se carga más rápido y es más seguro.
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+🤝 Integración con GitHub Pages: Puedes publicar tu sitio directamente desde un repositorio GitHub con solo hacer push a la rama correcta.
+
+🛠️ Personalización completa: Usa Liquid, el motor de plantillas de Shopify, para lógica dentro del HTML.
+
+📚 Ideal para blogs técnicos: Jekyll soporta posts, categorías, etiquetas y paginación de forma nativa.
+
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable -->
+
+### Instalación y Primeros Pasos
+#### Instala Ruby y Bundler
+
+```bash
+gem install bundler jekyll
+```
+Crea un nuevo sitio
+
+```
+jekyll new mi-blog
+cd mi-blog
+bundle exec jekyll serve
+```
+
+Abre en el navegador http://localhost:4000 para ver tu sitio en acción.
+
+### Publicar tu Sitio Jekyll con GitHub Pages
+#### ¿Qué es GitHub Pages?
+GitHub Pages es un servicio gratuito de GitHub que te permite alojar sitios web directamente desde un repositorio. Jekyll fue diseñado para integrarse con este servicio desde sus inicios, lo que facilita tener un blog o portafolio en línea sin preocuparte por servidores o infraestructura.
+
+GitHub Pages puede compilar automáticamente tu sitio Jekyll si se cumplen estas condiciones:
+- El proyecto no utiliza plugins personalizados.
+- Se ajusta al entorno limitado de compilación que GitHub proporciona.
+- Usa temas oficiales o configuraciones mínimas.
+
+#### Formas de Publicar en GitHub Pages
+Opción 1: Usar GitHub Pages con compilación automática
+1. Crea un repositorio con el código de tu sitio Jekyll (excluyendo _site/).
+2. En Settings > Pages, selecciona la rama que deseas publicar (usualmente main) y la carpeta raíz o /docs.
+3. Asegúrate de tener un archivo index.md o index.html en esa carpeta.
+4. GitHub compilará automáticamente tu sitio (si cumple los requisitos de seguridad) y estará disponible en:
+https://<tu-usuario>.github.io/<repositorio>/
+
+❗ Ten en cuenta que si usas plugins personalizados o configuración avanzada, GitHub Pages no podrá compilarlo directamente.
