@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+      <ul>
+        {% assign categories_list = site.posts | map: 'categories' | uniq | flatten | sort %}
+        {% for category in categories_list %}
+          <li><a href="/blog/categories/{{ category | downcase | slugify }}/">{{ category }}</a></li>
+        {% endfor %}
+      </ul>
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+    {%- include sub-footer.html -%}
+
+  </body>
+
+</html>
