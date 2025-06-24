@@ -1,0 +1,68 @@
+---
+title: Creando documentación con Jekyll
+description: Guía para trabajar con jekyll y publicar artículos.
+author: wcerrudo
+layout: default
+grand_parent: Layout
+date: 2025-06-21 11:33:00 +0800
+categories: [jekyll, publicar, ruby]
+tags: [typography]
+image:
+  path: /img/jekyll.png
+  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
+  alt: Responsive rendering of Chirpy theme on multiple devices.
+---
+
+**Jekyll** es un generador de sitios estáticos escrito en Ruby. Se usa para crear blogs y páginas web que se pueden publicar fácilmente en servicios como GitHub Pages, convirtiendo archivos Markdown en sitios web rápidos y seguros.
+
+A diferencia de los sistemas de gestión de contenidos como WordPress, Jekyll no necesita una base de datos: simplemente toma tus archivos .md (Markdown), .html y plantillas Liquid, y los compila en un conjunto de archivos HTML listos para desplegar.
+
+### Porque Jekyll?
+
+✅ Simplicidad y control total: Al trabajar con archivos planos, puedes versionar tu sitio como cualquier otro proyecto de software.
+
+🚀 Velocidad y rendimiento: Al ser un sitio estático, se carga más rápido y es más seguro.
+
+🤝 Integración con GitHub Pages: Puedes publicar tu sitio directamente desde un repositorio GitHub con solo hacer push a la rama correcta.
+
+🛠️ Personalización completa: Usa Liquid, el motor de plantillas de Shopify, para lógica dentro del HTML.
+
+📚 Ideal para blogs técnicos: Jekyll soporta posts, categorías, etiquetas y paginación de forma nativa.
+
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable -->
+
+### Instalación y Primeros Pasos
+#### Instala Ruby y Bundler
+
+```bash
+gem install bundler jekyll
+```
+Crea un nuevo sitio
+
+```
+jekyll new mi-blog
+cd mi-blog
+bundle exec jekyll serve
+```
+
+Abre en el navegador http://localhost:4000 para ver tu sitio en acción.
+
+### Publicar tu Sitio Jekyll con GitHub Pages
+#### ¿Qué es GitHub Pages?
+GitHub Pages es un servicio gratuito de GitHub que te permite alojar sitios web directamente desde un repositorio. Jekyll fue diseñado para integrarse con este servicio desde sus inicios, lo que facilita tener un blog o portafolio en línea sin preocuparte por servidores o infraestructura.
+
+GitHub Pages puede compilar automáticamente tu sitio Jekyll si se cumplen estas condiciones:
+- El proyecto no utiliza plugins personalizados.
+- Se ajusta al entorno limitado de compilación que GitHub proporciona.
+- Usa temas oficiales o configuraciones mínimas.
+
+#### Formas de Publicar en GitHub Pages
+Opción 1: Usar GitHub Pages con compilación automática
+1. Crea un repositorio con el código de tu sitio Jekyll (excluyendo _site/).
+2. En Settings > Pages, selecciona la rama que deseas publicar (usualmente main) y la carpeta raíz o /docs.
+3. Asegúrate de tener un archivo index.md o index.html en esa carpeta.
+4. GitHub compilará automáticamente tu sitio (si cumple los requisitos de seguridad) y estará disponible en:
+https://<tu-usuario>.github.io/<repositorio>/
+
+❗ Ten en cuenta que si usas plugins personalizados o configuración avanzada, GitHub Pages no podrá compilarlo directamente.

@@ -2,6 +2,8 @@
 title: Trabajando con jekyll
 description: Guía para trabajar con jekyll y publicar artículos.
 author: wcerrudo
+layout: default
+grand_parent: Layout
 date: 2025-06-21 11:33:00 +0800
 categories: [jekyll, publicar, ruby]
 tags: [typography]

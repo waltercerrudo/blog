@@ -22,15 +22,38 @@ layout: table_wrappers
       {% include components/breadcrumbs.html %}
       <div id="main-content" class="main-content">
         <main>
+          <h1>{{ page.title }}</h1>
+          {% if page.image and page.image.path %}
+              <img src="{{ site.baseurl }}{{ page.image.path }}" alt="{{ page.image.alt }}" style="width:100%; height:auto; margin-right:1.5em; border-radius:6px; box-shadow:0 1px 4px rgba(125,125,125,0.08);">
+          {% endif %}
           {% if site.heading_anchors != false %}
             {% include vendor/anchor_headings.html html=content beforeHeading="true" anchorBody="<svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><use xlink:href=\"#svg-link\"></use></svg>" anchorClass="anchor-heading" anchorAttrs="aria-labelledby=\"%html_id%\"" %}
           {% else %}
             {{ content }}
           {% endif %}
 
-          {% if page.has_toc != false %}
-            {% include components/children_nav.html %}
+
+          {% if page.previous or page.next %}
+            <div style="display: flex; justify-content: space-between; margin-top: 2em; gap: 1em;">
+              {% if page.previous %}
+                <a href="{{ site.baseurl }}{{ page.previous.url }}" aria-label="Previous: {{ page.previous.title }}"
+                   style="flex:1; display: flex; align-items: center; justify-content: flex-start; padding: 0.7em 1.2em; border-radius: 4px; background: #e9ecef; color: #333; text-decoration: none; font-weight: 500; box-shadow: 0 1px 4px rgba(0,0,0,0.06); transition: background 0.2s;">
+                  &#60;&#60; {{ page.previous.title }}
+                </a>
+              {% else %}
+                <span style="flex:1;"></span>
+              {% endif %}
+              {% if page.next %}
+                <a href="{{ site.baseurl }}{{ page.next.url }}" aria-label="Next: {{ page.next.title }}"
+                   style="flex:1; display: flex; align-items: center; justify-content: flex-end; padding: 0.7em 1.2em; border-radius: 4px; background: #e9ecef; color: #333; text-decoration: none; font-weight: 500; box-shadow: 0 1px 4px rgba(0,0,0,0.06); transition: background 0.2s;">
+                  {{ page.next.title }} &#62;&#62;
+                </a>
+              {% else %}
+                <span style="flex:1;"></span>
+              {% endif %}
+            </div>
           {% endif %}
+          
         </main>
         {% include components/footer.html %}
       </div>
