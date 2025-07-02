@@ -1,6 +1,7 @@
 ---
 title: Line Numbers
 parent: Code
+nav_exclude: true
 ---
 
 # Code Snippets with Line Numbers

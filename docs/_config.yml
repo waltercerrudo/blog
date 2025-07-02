@@ -13,11 +13,11 @@
 # you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Just the Docs
+title: LITBlog
 description: A Jekyll theme for documentation
 url: "https://waltercerrudo.github.io"
 baseurl: "/blog"
-repository: just-the-docs/just-the-docs # for github-metadata
+repository: waltercerrudo/blog # for github-metadata
 
 permalink: pretty
 
@@ -126,8 +126,8 @@ nav_sort: case_sensitive # Capital letters sorted before lowercase
 
 # External navigation links
 nav_external_links:
-  - title: Just the Docs on GitHub
-    url: https://github.com/just-the-docs/just-the-docs
+  - title: GitHug/Blog
+    url: https://github.com/waltercerrudo/blog
 
 # Show navigation error report
 nav_error_report: true # default is false/nil.
@@ -141,9 +141,9 @@ liquid:
 
 # Back to top link
 back_to_top: true
-back_to_top_text: "Back to top"
+back_to_top_text: "Volver"
 
-footer_content: 'Copyright &copy; 2017-2020 Patrick Marsceill. Distributed by an <a href="https://github.com/just-the-docs/just-the-docs/tree/main/LICENSE.txt">MIT license.</a> <a href="https://www.netlify.com/">This site is powered by Netlify.</a>'
+footer_content: 'Este sitio utiliza como base el template <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a> desarrollado por Patrick Marsceill y distribuido bajo la <a href="https://github.com/just-the-docs/just-the-docs/tree/main/LICENSE.txt">licencia MIT</a>. <a href="https://www.netlify.com/">Este sitio es impulsado por Netlify.</a>'
 
 # Footer last edited timestamp
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
@@ -151,8 +151,8 @@ last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https:/
 
 # Footer "Edit this page on GitHub" link text
 gh_edit_link: true # show or hide edit this page link
-gh_edit_link_text: "Edit this page on GitHub"
-gh_edit_repository: "https://github.com/just-the-docs/just-the-docs" # the github URL for your repo
+gh_edit_link_text: "Editar en GitHub"
+gh_edit_repository: "https://github.com/waltercerrudo/blog" # the github URL for your repo
 gh_edit_branch: "main" # the branch that your docs is served from
 # gh_edit_source: docs # the source that your files originate from
 gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
@@ -164,6 +164,9 @@ collections:
   posts:
     output: true
     permalink: /blog/posts/:title/
+  articulos:
+    output: true
+    permalink: /blog/articulos/:title/
 
 plugins:
   - jekyll-seo-tag

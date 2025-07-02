@@ -1,1 +1,84 @@
 // custom SCSS (or CSS) goes here
+div.post-list {
+    padding: 0;
+}
+
+div.post-card {
+    margin-bottom:1em; 
+    list-style:none; 
+    background:#f9f9fb; 
+    border-radius:8px; 
+    box-shadow:0 2px 8px rgba(0,0,0,0.04); 
+    padding:0.5em;    
+}
+
+
+div.post-card > h3{
+    margin-top: 0.5em;
+    border-bottom: 1px solid #333;
+    margin-bottom:0.3em; 
+    font-size:1.6em; 
+    font-weight:700; 
+    color:#2d3748; 
+    letter-spacing:-0.5px;
+}
+
+div.post-card > h3 > a.post-link{
+    text-decoration:none;
+    color:inherit;
+}
+
+div.post-card > .post-meta {
+    text-align: right;
+    display:block;
+    font-size:1em;
+    color:#6c757d;
+    margin-bottom:0em;
+    font-style:italic;
+}
+
+div.post-card > .post-author {
+    text-align: left;
+    display:block;
+    font-size:1em;
+    color:#32363a;
+    margin-bottom:0em;
+    font-style:italic;
+}
+
+div.post-img {
+    display:flex; align-items:flex-start;
+}
+
+div.post-img > img {
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 14px 18px rgba(10, 10, 10, 0.5);
+    margin: 10px 10px;
+    transition: transform 0.3s ease;
+}
+
+div.post-img > img:hover {
+  transform: scale(1.05); /* Efecto de zoom en hover */
+}
+
+div.post-img > .post-excerpt {
+    font-size:1.1em; 
+    color:#4a5568; 
+    line-height:1.6em; 
+    margin-top:0em;
+    flex:1; 
+    font-size:1.1em; 
+    color:#444;
+    line-height:1.7;
+}
+
+.post-excerpt > p {
+    margin:0;
+    margin-bottom:0.5em;
+    font-size:1.1em;
+    color:#444;
+    line-height:1.7;
+}
+

@@ -1,6 +1,7 @@
 ---
 title: Color
 parent: Utilities
+nav_exclude: true
 ---
 
 # Color Utilities

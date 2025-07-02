@@ -2,6 +2,7 @@
 title: In-Page Navigation
 parent: Navigation
 nav_order: 5
+nav_exclude: true
 ---
 
 # In-Page Navigation

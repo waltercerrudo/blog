@@ -2,6 +2,7 @@
 title: Child Pages
 parent: Navigation
 nav_order: 4
+nav_exclude: true
 ---
 
 # Child Pages
