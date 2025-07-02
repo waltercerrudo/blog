@@ -65,5 +65,5 @@ El contenido publicado es propiedad de sus autores y se distribuye bajo la licen
 ---
 
 ¿Quieres publicar tu propio artículo?  
-Consulta la [guía para publicar](/como-publicar/) o contacta a los administradores del blog.
+Consulta la [guía para publicar](/blog/como-publicar/) o contacta a los administradores del blog.
 
